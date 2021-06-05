@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <input type="password" id="password" class="inputBox" placeholder="Your Password...">
+        <div class="eye-container"><ion-icon name="eye-outline" class="eye"></ion-icon></div>
+        <button id="genBtn" onclick="getPass()">Generate</button>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script>
+        const inputBox = document.querySelector('.inputBox');
+        const eye = document.querySelector('.eye');
+
+        eye.addEventListener('click', () => {
+            if (inputBox.type === 'password') {
+                inputBox.type = 'text';
+            } else {
+                inputBox.type = 'password'
+            }
+        });
+        // Password Part
+        function getPass() {
+            const char = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@!#$%^&*(){}:.[]";
+            const passwordLength = 16;
+            let password = '';
+            
+            for (var i=0; i<passwordLength; i++) {
+                var randomNumber = Math.floor(Math.random() * char.length);
+                password += char.substring(randomNumber, randomNumber+1)
+            }
+            document.getElementById('password').value = password;
+        };
+    </script>
+</body>
+</html>

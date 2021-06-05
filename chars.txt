@@ -1,0 +1,4 @@
+Password Charcter TEXT in video Description
+
+
+0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@!#$%^&*(){}:.[]
